@@ -55,7 +55,11 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var data = await weatherModel.getLocation();
+                      print(data);
+                      upDateui(data);
+                    },
                     child: Icon(
                       Icons.near_me,
                       size: 50.0,
